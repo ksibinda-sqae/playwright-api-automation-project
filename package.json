@@ -1,0 +1,50 @@
+{
+  "name": "playwright-api-automation-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test --config=playwright.api.config.ts",
+    "test:dev": "cross-env TEST_ENV=dev playwright test --config=playwright.api.config.ts",
+    "test:qa": "cross-env TEST_ENV=qa playwright test --config=playwright.api.config.ts",
+
+    "clean:reports": "rimraf reports/allure-results reports/allure-report",
+
+    "report:allure": "allure serve reports/allure-results",
+    "report:generate": "allure generate reports/allure-results --clean -o reports/allure-report",
+    "report:open": "allure open reports/allure-report",
+    "report": "npm run report:generate",
+
+    "test:reg": "npm run clean:reports && npm run test:dev -- --grep \"@reg\" && npm run report",
+
+    "test:func": "npm run clean:reports && npm run test:dev -- --grep \"@func\" && npm run report",
+
+    "test:smoke": "npm run clean:reports && npm run test:dev -- --grep \"@smoke\" && npm run report",
+
+    "test:auth": "npm run clean:reports && npm run test:dev -- --grep \"@auth\" && npm run report",
+
+    "test:api": "npm run clean:reports && cross-env TEST_ENV=dev playwright test --config=playwright.api.config.ts --grep \"@api\" && npm run report",
+
+    "test:dev:report": "npm run clean:reports && npm run test:dev && npm run report:generate && npm run report:open",
+    
+    "test:debug": "playwright test --config=playwright.api.config.ts --debug"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.2",
+    "allure-commandline": "^2.42.0",
+    "allure-js-commons": "^3.10.0",
+    "allure-playwright": "^3.10.0",
+    "cross-env": "^10.1.0",
+    "rimraf": "^6.1.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "winston": "^3.19.0"
+  }
+}
