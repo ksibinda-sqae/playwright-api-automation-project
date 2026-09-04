@@ -1,7 +1,6 @@
 import { test as base } from '@playwright/test';
-
-import { AuthService } from '../services/AuthService';
-import { AuthApiAssertions } from '../assertions/AuthApiAssertions';
+import { AuthService } from '../application/services/AuthService';
+import { AuthApiAssertions } from '../application/assertions/AuthApiAssertions';
 
 export type APIFixtures = {
   authService: AuthService;

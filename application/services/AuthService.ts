@@ -1,9 +1,9 @@
 import { step } from 'allure-js-commons';
-import { AllureHelper } from '../../core/reporting/AllureHelper';
 import { LoginRequest } from '../models/common/requests/LoginRequest';
 import { BaseApiClient } from '../clients/BaseApiClient';
 import { ApiResponse } from '../models/common/ApiResponse';
 import { LoginResponse } from '../models/common/responses/LoginResponse';
+import { AllureHelper } from '../../core/reporting/AllureHelper';
 
 
 

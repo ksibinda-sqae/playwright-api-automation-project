@@ -1,5 +1,5 @@
-import { LoginRequest } from '../../../api/models/common/requests/LoginRequest';
 import { apiEnv } from '../../../config/environment/apiEnv';
+import { LoginRequest } from '../../models/common/requests/LoginRequest';
 
 
   export const apiAuthenticatedUser: LoginRequest = {

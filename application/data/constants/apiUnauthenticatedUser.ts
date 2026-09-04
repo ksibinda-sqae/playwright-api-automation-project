@@ -1,4 +1,4 @@
-import { LoginRequest } from '../../../api/models/common/requests/LoginRequest';
+import { LoginRequest } from '../../models/common/requests/LoginRequest';
 
 export const apiUnauthenticatedUser: LoginRequest = {
   username: 'unauthenticated',

@@ -1,4 +1,4 @@
-import { expect, APIResponse } from '@playwright/test';
+import { expect } from '@playwright/test';
 import { step } from 'allure-js-commons';
 import { ApiResponse } from '../models/common/ApiResponse';
 import { LoginResponse } from '../models/common/responses/LoginResponse';
@@ -21,15 +21,13 @@ export class AuthApiAssertions {
 
   async assertUnauthenticatedUser(response: ApiResponse<LoginResponse>, expectedStatus: number): Promise<void> {
     await step('Verify login failed', async () => {
-      console.log(response.body)
-
       expect(response.ok).toBe(false);
 
       expect(response.status).toBe(expectedStatus);
 
       const errorMessage: string = 'Invalid credentials';
 
-      expect(response.body.message).toBe(errorMessage)
+      expect(response.body.message).toBe(errorMessage);
     });
   }
 }
