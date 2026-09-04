@@ -1,5 +1,5 @@
-import { apiTest } from '../../../api/fixtures/apiFixtures';
-import { ApiUserFactory } from '../../../api/data/factory/ApiUserFactory';
+import { ApiUserFactory } from '../../../application/data/factory/ApiUserFactory';
+import { apiTest } from '../../../fixtures/apiFixtures';
 
 apiTest(
   'TC01 - Successful Login',

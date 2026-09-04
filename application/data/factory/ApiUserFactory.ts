@@ -1,6 +1,6 @@
-import { LoginRequest } from "../../../api/models/common/requests/LoginRequest";
+import { LoginRequest } from '../../models/common/requests/LoginRequest';
 import { apiAuthenticatedUser } from '../constants/apiAuthenticatedUser';
-import { apiUnauthenticatedUser } from "../constants/apiUnauthenticatedUser";
+import { apiUnauthenticatedUser } from '../constants/apiUnauthenticatedUser';
 
 export class ApiUserFactory {
 
